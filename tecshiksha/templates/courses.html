@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <!-- Courses Section Starts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+  <link rel="stylesheet" href="{% static 'css/style_courses.css' %}">
+
+  <div class="container-fluid">
+    <div class="heading">
+      <h2>Courses</h2>
+    </div>
+    <div class="container-box">
+  		<div class="card-box animated fadeInLeft">
+        <div class="face">
+          <div class="face1">
+    				<div class="content-box">
+              <img src="{% static 'Images/artificial_Intelligence02.webp' %}" class="img-fluid" alt="ai_course_img">
+    				</div>
+    			</div>
+    			<div class="face2">
+    				<div class="content-box">
+              <h2>Artificial Intelligence</h2>
+    					<p>Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems.</p>
+              <!-- <p><a href="{{ 'artificialintelligence-course' }}">Know More</a></p> -->
+              <p><a href="{{ 'contact' }}">Know More</a></p>
+    				</div>
+    			</div>
+        </div>
+      </div>
+  		<div class="card-box animated fadeIn">
+        <div class="face">
+          <div class="face1">
+    				<div class="content-box">
+              <img src="{% static 'Images/IOT_img.webp' %}" class="img-fluid" alt="iot_course_img">
+    				</div>
+    			</div>
+    			<div class="face2">
+    				<div class="content-box">
+              <h2>Internet of Things</h2>
+              <p>Internet of Things is interconnection between devices and able to communicate through internet and perform actions.</p>
+              <!-- <p><a href="{{ 'iot-course' }}">Know More</a></p> -->
+              <p><a href="{{ 'contact' }}">Know More</a></p>
+    				</div>
+    			</div>
+        </div>
+  		</div>
+  		<div class="card-box animated fadeInRight">
+        <div class="face">
+          <div class="face1">
+    				<div class="content-box">
+              <img src="{% static 'Images/Python_img.webp' %}" class="img-fluid" alt="python_course_img">
+    				</div>
+    			</div>
+    			<div class="face2">
+    				<div class="content-box">
+              <h2>Python</h2>
+    					<p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.</p>
+              <!-- <p><a href="{{ 'python-course' }}">Know More</a></p> -->
+              <p><a href="{{ 'contact' }}">Know More</a></p>
+    				</div>
+    			</div>
+  		 </div>
+  	</div>
+  </div>
+  <div class="container-box">
+    <div class="card-box animated fadeInLeft delay-1s">
+      <div class="face">
+        <div class="face1">
+          <div class="content-box">
+            <img src="{% static 'Images/AndApp_img.webp' %}" class="img-fluid" alt="andapp_course_img">
+          </div>
+        </div>
+        <div class="face2">
+          <div class="content-box">
+            <h2>Android App Development</h2>
+            <p>Android software development is the process by which new applications are created for devices running the Android operating system.</p>
+            <!-- <p><a href="{{ 'androidapp-course' }}">Know More</a></p> -->
+            <p><a href="{{ 'contact' }}">Know More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-box animated fadeIn delay-1s">
+      <div class="face">
+        <div class="face1">
+          <div class="content-box">
+            <img src="{% static 'Images/IOSApp_img.webp' %}" class="img-fluid" alt="iosapp_course_img">
+          </div>
+        </div>
+        <div class="face2">
+          <div class="content-box">
+            <h2>IOS App Development</h2>
+            <p>IOS software development is the process by which new applications are created for devices running the IOS operating system.</p>
+            <!-- <p><a href="{{ 'iosapp-course' }}">Know More</a></p> -->
+            <p><a href="{{ 'contact' }}">Know More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-box animated fadeInRight delay-1s">
+      <div class="face">
+        <div class="face1">
+          <div class="content-box">
+            <img src="{% static 'Images/Wd_img.webp' %}" class="img-fluid" alt="wd_course_img">
+          </div>
+        </div>
+        <div class="face2">
+          <div class="content-box">
+            <h2>Web Designing</h2>
+            <p>Web design is the process of creating websites. It encompasses several different aspects, including webpage layout and content production.</p>
+            <!-- <p><a href="{{ 'webdesigning-course' }}">Know More</a></p> -->
+            <p><a href="{{ 'contact' }}">Know More</a></p>
+          </div>
+        </div>
+     </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}

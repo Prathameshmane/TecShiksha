@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+<link rel="stylesheet" href="{% static 'css/course.css' %}">
+    <div class="container pt-5">
+      <div class="course-info">
+        <div class="course-info-heading">
+          <h2>Web Designing</h2>
+        </div>
+        <div class="row">
+          <div class="course-info-content pt-4 col-lg-9 col-md-9 col-sm-12">
+            <div class="course-main-info pb-3">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Course: </td>
+                    <td>Web Designing</td>
+                  </tr>
+                  <tr>
+                    <td>Duration: </td>
+                    <td>12 Hrs</td>
+                  </tr>
+                  <tr>
+                    <td>Batch Timings: </td>
+                    <td>12 AM To PM</td>
+                  </tr>
+                  <tr>
+                    <td>Batch Days:</td>
+                    <td>Weekends</td>
+                  </tr>
+                  <tr>
+                    <td>Our Experts: </td>
+                    <td> Sir.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <p class="course-info">Course: <span>Artificial Intelligence</span></p>
+              <p class="course-info">Duration:<span> 12 Hrs</span></p>
+              <p class="course-info">Fees:<span> 00000</span></p>
+              <p class="course-info">Timings:<span> 12 Am TO PM</span></p>
+              <p class="course-info">Our Experts:<span> Sir</span></p> -->
+            </div>
+            <div class="about-course-info">
+              <h5 class="about-course-heading">About Web Designing</h5>
+              <p class="about-course"><B>Web design</B> encompasses many different skills and disciplines in the production and maintenance of websites.
+                The different areas of web design include web graphic design; interface design; authoring, including standardised code and proprietary software;
+                user experience design; and search engine optimization. Often many individuals will work in teams covering different aspects of the design process,
+                although some designers will cover them all.<p>
+              <p class="about-course">The term web design is normally used to describe the design process relating to the front-end (client side) design of a website
+                including writing markup. Web design partially overlaps web engineering in the broader scope of web development. Web designers are expected to have an
+                awareness of usability and if their role involves creating markup then they are also expected to be up to date with web accessibility guidelines.</p>
+              <h5 class="about-course-heading">Why Choose Us.</h5>
+              <ul class="about-course">
+                <li>We Take 80% Practical, 20% Theory For Every Course We Teach</li>
+                <li>Hands On Training With Real-Life Project</li>
+                <li>Assistance In Real Life</li>
+                <li>Our Experts</li>
+                <li>We Train Our Students For The Future</li>
+              </ul>
+            </div>
+            <form role="form" action method="POST" class="msg-form mt-4 mb-3">
+              {% csrf_token %}
+              <div class="form-heading">
+                <h2>Quick Enquiry</h2>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="fname" required="required" id="id_fname">
+                    <span for="id_fname" class="text">First Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="lname" required="required" id="id_lname">
+                    <span for="id_lname" class="text">Last Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="email" name="email" required="required" id="id_email">
+                    <span for="id_email" class="text">Email</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="number" name="m_number" required="required" id="id_m_number">
+                    <span class="text" for="id_m_number">Mobile</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox textarea">
+                    <textarea required="required" name="content" id="id_form_content"></textarea>
+                    <span for="id_form_content" class="text">Type Your Message Here..</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <button type="submit" class="" title="">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="courses-info-discount col-lg-3 col-md-3 col-sm-12">
+            <div class="container course-info-box">
+              <div class="course-broucher">
+                <h2 class="heading">Course Broucher</h2>
+                <a href="#">Web Designing Broucher</a>
+              </div>
+              <div class="offer-list">
+                <h2 class="heading">Offers On Courses</h2>
+                <ul class="list">
+                  {% for offer in offers %}
+                    <li class="animated fadeIn infinite"><a class="{% if offer.on_offer == 'True' %}offer{% endif %}" href="#">{{offer.name}} {{offer.discount}}% Off</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

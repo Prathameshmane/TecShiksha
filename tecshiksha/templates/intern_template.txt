@@ -1,0 +1,18 @@
+Your Name:
+{{ name }}
+
+Email:
+{{ email }}
+
+Mobile Number:
+{{ m_number }}
+
+
+Content:
+{{ form_content }}
+
+City:
+{{ city }}
+
+State:
+{{ state }}

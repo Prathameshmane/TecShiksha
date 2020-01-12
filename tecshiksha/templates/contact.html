@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+
+      <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+			<div class="container contact-us pt-3">
+				<div class="container-fluid">
+					<div class="pt-4 contact-us-form">
+						<div class="contact-us-heading">
+							<h2>Contact Us</h2>
+						</div>
+						<div class="container-fuild row" id="blur">
+							<form method="POST" class=" col-lg-9 col-md-12 col-sm-12">
+                {% csrf_token %}
+                <div class="row100">
+									<div class="col">
+										<div class="inputBox">
+											<input type="text" name="fname" required="required" id="id_fname">
+											<span for="id_fname" class="text">First Name</span>
+											<span class="line"></span>
+										</div>
+									</div>
+									<div class="col">
+										<div class="inputBox">
+											<input type="text" name="lname" required="required" id="id_lname">
+											<span for="id_lname" class="text">Last Name</span>
+											<span class="line"></span>
+										</div>
+									</div>
+								</div>
+								<div class="row100">
+									<div class="col">
+										<div class="inputBox">
+											<input type="email" name="email" required="required" id="id_email">
+											<span for="id_email" class="text">Email</span>
+											<span class="line"></span>
+										</div>
+									</div>
+									<div class="col">
+										<div class="inputBox">
+											<input type="number" name="m_number" required="required" id="id_m_number">
+											<span class="text" for="id_m_number">Mobile</span>
+											<span class="line"></span>
+										</div>
+									</div>
+								</div>
+                <div class="row100">
+                  <div class="col">
+                    <div class="inputBox">
+                      <input type="text" name="city" required="required" id="id_city">
+                      <span class="text">City</span>
+                      <span class="line"></span>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="inputBox dropdown designation">
+                      <select class="form-control" id="id_designation" name="designation">
+                        <option value="student">Student</option>
+                        <option value="working">Working</option>
+                      </select>
+                      <span class="text">Designation</span>
+                      <span class="line"></span>
+                    </div>
+                  </div>
+                </div>
+								<div class="row100">
+									<div class="col">
+										<div class="inputBox textarea">
+											<textarea required="required" name="form_content" id="id_form_content"></textarea>
+											<span for="id_form_content" class="text">Type Your Message Here..</span>
+											<span class="line"></span>
+										</div>
+									</div>
+								</div>
+								<div class="row100">
+									<div class="col">
+										<button type="submit">Submit</button>
+									</div>
+								</div>
+							</form>
+
+							<div class="contact-info col-lg-3 col-md-12 col-sm-12">
+								<div class="contact-heading">
+									<h5>See Us in Person!</h5>
+								</div>
+								<div class="contact-content">
+									<p>We love our customers, so feel free to visit during normal business hours.</p>
+								</div>
+								<div class="contact-heading">
+									<h5>Shiksha AI & Robotics</h5>
+								</div>
+								<div class="contact-content">
+									<p>Row House No 8, Sai Prasad Co Housing Society, Opp to Airoli Railway Station, Sector 3, Airoli, Navi Mumbai</p>
+									<p>8355908352</p>
+								</div>
+								<div class="contact-heading">
+									<h5>Hours</h5>
+								</div>
+								<div class="contact-content">
+									<p>Open today 08:00 am – 10:30 pm</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+      {% endblock %}

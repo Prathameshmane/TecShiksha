@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title></title>
+		<link rel="stylesheet" href="css/try.css">
+	</head>
+	<body>
+		<div class="container">
+			<header id="navbar">
+				<a href="#" class="logo" title="">Good<span>Foods</span></a>
+				<ul>
+					<li><a href="#" class="active" title="">Home</a></li>
+					<li><a href="#" title="">Menu</a></li>
+					<li><a href="#" title="">About</a></li>
+					<li><a href="#" title="">Contact</a></li>
+				</ul>
+				<span class="menuIcons" onclick="menuToggle();"></span>
+			</header>
+			<div class="content">
+				<div class="bannerText" id="slideshowText">
+					<div class="active">
+						<h2>Eat Healthy<br>
+						Stay Healthy</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<a href="#" title="">Read More</a>
+					</div>
+					<div>
+						<h2>Eat Food<br>
+						Stay Healthy</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<a href="#" title="">Read More</a>
+					</div>
+					<div>
+						<h2>Good Food<br>
+						Good Mood</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<a href="#" title="">Read More</a>
+					</div>
+				</div>
+				<div class="bannerImg" id="slideshow">
+					<img src="Images/img1.jpg" class="active">
+					<img src="Images/img2.jpg">
+					<img src="Images/img3.jpg">
+				</div>
+			</div>
+			<div class="icons">
+				<ul class="sci">
+					<li><a href="#" title=""><img src="Images/facebook.png"></a></li>
+					<li><a href="#" title=""><img src="Images/instagram.png"></a></li>
+					<li><a href="#" title=""><img src="Images/twitter.png"></a></li>
+				</ul>
+				<ul class="controls">
+					<li><a><img src="Images/left.png" onclick="prevSlide();prevSlideText()"></a></li>
+					<li><a><img src="Images/right.png" onclick="nextSlide();nextSlideText()"></a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var slideshow  = document.getElementById('slideshow');
+			var slides = document.getElementsByTagName('img');
+			var index = 0;
+
+			function nextSlide(){
+				slides[index].classList.remove('active');
+				index = (index + 1) % slides.length;
+				slides[index].classList.add('active');
+			}
+			function prevSlide(){
+				slides[index].classList.remove('active');
+				index = (index - 1 + slides.length) % slides.length;
+				slides[index].classList.add('active');
+			}
+
+			var slideshowText  = document.getElementById('slideshowText');
+			var slidesText = slideshowText.getElementsByTagName('div');
+			var i = 0;
+
+			function nextSlideText(){
+				slidesText[i].classList.remove('active');
+				i = (i + 1) % slidesText.length;
+				slidesText[i].classList.add('active');
+			}
+			function prevSlideText(){
+				slidesText[i].classList.remove('active');
+				i = (i - 1 + slidesText.length) % slidesText.length;
+				slidesText[i].classList.add('active');
+			}
+			function menuToggle(){
+				var nav = document.getElementById('navbar')
+				nav.classList.toggle('active')
+			}
+		</script>
+	</body>
+</html>

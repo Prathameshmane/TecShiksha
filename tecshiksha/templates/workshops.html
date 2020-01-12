@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+      <link rel="stylesheet" href="{% static 'css/workshops.css' %}">
+			<div class="heading">
+				<h2>Workshops</h2>
+			</div>
+			<div class="row workshop pt-3 pb-3">
+				<div class="col-lg-9 col-md-9 col-sm-12">
+          <div class="container-Box">
+            {% for workshop in workshops %}
+            <div class="cardBox" id="{{ workshop.id }}">
+              <div class="imgBx">
+                <img src="{{workshop.img.url}}" class="img-fluid" alt="workshopimg">
+              </div>
+              <div class="contentBx">
+                <div>
+                  <h2>{{workshop.heading}}</h2>
+                  <p><b>Date:</b>{{workshop.date}}</p>
+                  <p><b>Venue:</b>{{workshop.venue}}</p>
+                  <a href="{{workshop.site}}" title="">Know More.</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="workshop-form">
+            <form method="POST" class="msg-form mt-4 mb-3">
+              {% csrf_token %}
+              <div class="form-heading">
+                <h2>To Organize a Workshop at your College or Institution get in touch with us.</h2>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="fname" required="required" id="id_fname">
+                    <span class="text">First Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="lname" required="required" id="id_lname">
+                    <span class="text">Last Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="email" name="email" required="required" id="id_email">
+                    <span class="text">Email</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="number" name="m_number" required="required" id="id_m_number">
+                    <span class="text">Mobile</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="city" required="required" id="id_city">
+                    <span class="text">City</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox dropdown designation">
+                    <select class="form-control" id="id_designation" name="designation">
+                      <option value="student">Student</option>
+                      <option value="working">Working</option>
+                    </select>
+                    <span class="text">Designation</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox textarea">
+                    <textarea required="required" name="form_content" id="id_form_content"></textarea>
+                    <span class="text">Type Your Message Here..</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <button type="submit" class="" title="">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="container workshop-list">
+            <h2 class="heading">Workshops List</h2>
+            <ul class="list">
+              {% for workshop in workshops %}
+                <li><a href="#{{ workshop.id }}">{{workshop.heading}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endblock %}

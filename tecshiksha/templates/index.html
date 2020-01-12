@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+			<div class="content">
+				<div class="bannerText" id="slideshowText">
+					<div class="active">
+						<h1 class="animated bounceInDown">Artificial Intelligence</h1>
+						<p class="animated bounceInUp">Artificial Intelligence is an intelligence system put together artificially to learn and provide an output. Learning can be done by providing data to the AI system.</p>
+						<!-- <a href="{{ 'artificialintelligence-course' }}" class="animated bounceInRight" title="">Read More</a> -->
+            <a href="{{ 'contact' }}" class="animated bounceInRight" title="">Read More</a>
+					</div>
+					<div>
+						<h1 class="animated bounceInDown">Internet of Things</h1>
+						<p class="animated bounceInUp">The Internet of Things can be described as an extension of the internet and other network connections to different sensors and devices affording even simple objects a higher.</p>
+						<!-- <a href="{{ 'iot-course' }}" class="animated bounceInRight" title="">Read More</a> -->
+            <a href="{{ 'contact' }}" class="animated bounceInRight" title="">Read More</a>
+					</div>
+          <div>
+						<h1 class="animated bounceInDown">Python</h1>
+						<p class="animated bounceInUp">Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.</p>
+						<!-- <a href="{{ 'python-course' }}" class="animated bounceInRight" title="">Read More</a> -->
+            <a href="{{ 'contact' }}" class="animated bounceInRight" title="">Read More</a>
+					</div>
+          <div>
+						<h1 class="animated bounceInDown">Android App Development</h1>
+						<p class="animated bounceInUp">Android software development is the process by which new applications are created for devices running the Android operating system.</p>
+						<!-- <a href="{{ 'androidapp-course' }}" class="animated bounceInRight" title="">Read More</a> -->
+            <a href="{{ 'contact' }}" class="animated bounceInRight" title="">Read More</a>
+					</div>
+          <div>
+						<h1 class="animated bounceInDown">IOS App Development</h1>
+						<p class="animated bounceInUp">IOS software development is the process by which new applications are created for devices running the IOS operating system.</p>
+						<!-- <a href="{{ 'iosapp-course' }}" class="animated bounceInRight" title="">Read More</a> -->
+            <a href="{{ 'contact' }}" class="animated bounceInRight" title="">Read More</a>
+					</div>
+					<div>
+						<h1 class="animated bounceInDown">Web Designing</h1>
+						<p class="animated bounceInUp">Web design is the process of creating websites. Web design refers to the design of websites that are displayed on the internet.</p>
+						<!-- <a href="{{ 'webdesigning-course' }}" class="animated bounceInRight" title="">Read More</a> -->
+            <a href="{{ 'contact' }}" class="animated bounceInRight" title="">Read More</a>
+					</div>
+				</div>
+				<div class="bannerImg" id="slideshow">
+					<img src="{% static 'Images/artificial_intelligence01.webp' %}" class="active" alt="ai_img">
+					<img src="{% static 'Images/IoT07.webp' %}" alt="iot_img">
+          <img src="{% static 'Images/Python.webp' %}" alt="py_img">
+          <img src="{% static 'Images/AndApp.webp' %}" alt="and_img">
+          <img src="{% static 'Images/IOSApp.webp' %}" alt="ios_img">
+					<img src="{% static 'Images/Web_Design.webp' %}" alt="wd_img">
+				</div>
+			</div>
+			<div class="icons">
+				<ul class="sci">
+					<li><a href="https://www.facebook.com/1152636354877467" title=""><img src="{% static 'Images/facebook.webp' %}" alt="fb_img"></a></li>
+					<li><a href="https://www.instagram.com/shiksha_tec/" title=""><img src="{% static 'Images/instagram.webp' %}" alt="ins_img"></a></li>
+					<li><a href="https://www.linkedin.com/in/krishna003" title=""><img src="{% static 'Images/linked.webp' %}" alt="li_img"></a></li>
+				</ul>
+				<ul class="controls">
+					<li><a><img src="{% static 'Images/left.webp' %}" onclick="prevSlide();prevSlideText()" alt="prev_img"></a></li>
+					<li><a><img src="{% static 'Images/right.webp' %}" onclick="nextSlide();nextSlideText()" alt="next_img"></a></li>
+				</ul>
+			</div>
+      <script>
+        //Slider Starts
+        var slideshow  = document.getElementById('slideshow');
+        var slides = slideshow.getElementsByTagName('img');
+        var index = 0;
+
+        function nextSlide(){
+          slides[index].classList.remove('active');
+          index = (index + 1) % slides.length;
+          slides[index].classList.add('active');
+        }
+        function prevSlide(){
+          slides[index].classList.remove('active');
+          index = (index - 1 + slides.length) % slides.length;
+          slides[index].classList.add('active');
+        }
+
+        var slideshowText  = document.getElementById('slideshowText');
+        var slidesText = slideshowText.getElementsByTagName('div');
+        var i = 0;
+
+        function nextSlideText(){
+          slidesText[i].classList.remove('active');
+          i = (i + 1) % slidesText.length;
+          slidesText[i].classList.add('active');
+        }
+        function prevSlideText(){
+          slidesText[i].classList.remove('active');
+          i = (i - 1 + slidesText.length) % slidesText.length;
+          slidesText[i].classList.add('active');
+        }
+        //Slider Ends
+      </script>
+    {% endblock %}

@@ -1,0 +1,204 @@
+.internship-info-heading h2 {
+	font-size: 45px;
+	font-weight: 800;
+	line-height: 1.2em;
+	color: #333;
+}
+.about-workshop-info .about-workshop-heading{
+	font-weight: 600;
+}
+.about-workshop-info .about-workshop{
+	font-weight: 500;
+	/* padding-right: 250px; */
+}
+.about-workshop-info ul.about-workshop{
+  padding-left: 20px;
+}
+.about-workshop-info ul.about-workshop li{
+  list-style-type: square;
+}
+
+.msg-form{
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 15px;
+}
+.msg-form .form-heading h2 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+.msg-form .row100{
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+.msg-form .row100 .col{
+	position: relative;
+	width: 100%;
+	padding: 0 10px;
+	margin: 30px 0 10px;
+	transition: 0.5s;
+}
+.msg-form .row100 .inputBox{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	color: #000;
+	font-weight: 500;
+}
+.msg-form .row100 .inputBox input,
+.msg-form .row100 .inputBox.textarea textarea{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	padding: 0 10px;
+	z-index: 1;
+	color: #000;
+}
+.msg-form .row100 .inputBox .text{
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 40px;
+	font-size: 18px;
+	padding: 0 10px;
+	display: block;
+	font-weight: 500;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.msg-form .row100 .inputBox input:focus + .text,
+.msg-form .row100 .inputBox input:valid + .text{
+	font-weight: 800;
+	top: -35px;
+	font-size: 15px;
+	color: #32cb00;
+}
+.msg-form .row100 .inputBox.cv input + .text{
+	font-weight: 800;
+	top: -35px;
+	font-size: 15px;
+	color: #32cb00;
+}
+.msg-form .row100 .inputBox .line{
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	border-bottom: 1px solid #e0e0e0;
+	transition: 0.5s;
+	border-radius: 8px;
+	pointer-events: none;
+}
+.msg-form .row100 .inputBox input:focus ~ .line,
+.msg-form .row100 .inputBox input:valid ~ .line{
+	height: 100%;
+}
+.msg-form .row100 .inputBox.textarea{
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding: 10px 0;
+}
+.msg-form .row100 .inputBox.textarea textarea{
+	height: 100%;
+	resize: none;
+}
+.msg-form .row100 .inputBox textarea:focus + .text,
+.msg-form .row100 .inputBox textarea:valid + .text{
+	top: -35px;
+	font-size: 15px;
+	color: #32cb00;
+	font-weight: 800;
+}
+.msg-form .row100 .inputBox textarea:focus ~ .line,
+.msg-form .row100 .inputBox textarea:valid ~ .line{
+	height: 100%;
+}
+.row100 .col button{
+	position: relative;
+	display: inline-block;
+	border: none;
+	font-weight: 700;
+	color: #333;
+	letter-spacing: 1px;
+	font-size: 18px;
+	padding: 12px;
+  background: none;
+  z-index: 1;
+}
+.row100 .col button:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	border-radius: 10px;
+	background: #a8e0ff;
+	z-index: -1;
+	transition: 0.5s ease-in-out;
+}
+.row100 .col button:hover:before{
+	width: 100%;
+}
+
+
+
+
+
+@media (max-width: 767px){
+  .internship-info-heading h2 {
+      font-size: 23.5px;
+      padding-bottom: 20px;
+  }
+  .about-workshop-info .about-workshop-heading {
+    font-size: 1.1rem;
+  }
+  .about-workshop-info .about-workshop {
+    font-size: 0.83rem;
+  }
+  .about-workshop-info .about-workshop:nth-child(3){
+    font-size: 0.83rem;
+    padding-bottom: 10px;
+  }
+  .msg-form .row100 .inputBox {
+    width: 100%;
+  }
+  .msg-form .form-heading h2 {
+    font-size: 20px;
+  }
+  .msg-form .row100 .inputBox input,
+  .msg-form .row100 .inputBox.textarea textarea {
+    font-size: 15px;
+  }
+  .msg-form .row100 .inputBox .text {
+    font-size: 15px;
+  }
+  .msg-form .row100 .inputBox input:focus + .text,
+  .msg-form .row100 .inputBox input:valid + .text{
+    top: -30px;
+    font-size: 12px;
+  }
+  .msg-form .row100 .inputBox textarea:focus + .text,
+  .msg-form .row100 .inputBox textarea:valid + .text{
+    top: -30px;
+    font-size: 12px;
+  }
+  .row100 .col button {
+    font-size: 14px;
+    background: none;
+  }
+}

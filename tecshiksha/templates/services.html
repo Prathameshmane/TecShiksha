@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <!-- Courses Section Starts -->
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+  <div class="container-fluid">
+    <div class="heading">
+      <h2>Our Services</h2>
+    </div>
+    <div class="container-box">
+      <div class="card-box animated fadeInLeft">
+        <div class="face">
+          <div class="face1">
+            <div class="content-box">
+              <img src="{% static 'Images/Internships.webp' %}" class="img-fluid" alt="intership_img">
+            </div>
+          </div>
+          <div class="face2">
+            <div class="content-box">
+              <h2>Internships</h2>
+              <p>We provide internships after a short interview with the candidate.</p>
+              <p><a href="{{ 'internship' }}">Know More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-box animated fadeIn">
+        <div class="face">
+          <div class="face1">
+            <div class="content-box">
+              <img src="{% static 'Images/Workshop.webp' %}" class="img-fluid" alt="workshop_img">
+            </div>
+          </div>
+          <div class="face2">
+            <div class="content-box">
+              <h2>Workshops</h2>
+              <p>All upcoming workshops are listed here. To Organise a workshop contact us.</p>
+              <p><a href="{{ 'workshops' }}">Know More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-box animated fadeInRight">
+        <div class="face">
+          <div class="face1">
+            <div class="content-box">
+              <img src="{% static 'Images/Projects.webp' %}" class="img-fluid" alt="project_img">
+            </div>
+          </div>
+          <div class="face2">
+            <div class="content-box">
+              <h2>Projects</h2>
+              <p>Real Life Implementable Projects Under the Guidance of Our Experts</p>
+              <p><a href="{{ 'contact' }}">Know More</a></p>
+            </div>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+<link rel="stylesheet" href="{% static 'css/course.css' %}">
+    <div class="container pt-4">
+      <div class="course-info">
+        <div class="course-info-heading">
+          <h2>Python</h2>
+        </div>
+        <div class="row">
+          <div class="course-info-content pt-4 col-lg-9 col-md-9 col-sm-12">
+            <div class="course-main-info pb-3">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Course: </td>
+                    <td>Python</td>
+                  </tr>
+                  <tr>
+                    <td>Duration: </td>
+                    <td>12 Hrs</td>
+                  </tr>
+                  <tr>
+                    <td>Batch Timings: </td>
+                    <td>12 AM To PM</td>
+                  </tr>
+                  <tr>
+                    <td>Batch Days:</td>
+                    <td>Weekends</td>
+                  </tr>
+                  <tr>
+                    <td>Our Experts: </td>
+                    <td> Sir.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="about-course-info">
+              <h5 class="about-course-heading">About Python</h5>
+              <p class="about-course"><b>Python</b> is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released
+                in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and
+                object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.<p>
+              <p class="about-course">Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including procedural,
+                object-oriented, and functional programming. Python is often described as a "batteries included" language due to its comprehensive standard library.
+                Python was conceived in the late 1980s as a successor to the ABC language.</p>
+              <h5 class="about-course-heading">Why Choose Us.</h5>
+              <ul class="about-course">
+                <li>We Take 80% Practical, 20% Theory For Every Course We Teach</li>
+                <li>Hands On Training With Real-Life Project</li>
+                <li>Assistance In Real Life</li>
+                <li>Our Experts</li>
+                <li>We Train Our Students For The Future</li>
+              </ul>
+            </div>
+            <form method="POST" class="msg-form mt-4 mb-3">
+              {% csrf_token %}
+              <div class="form-heading">
+                <h2>Quick Enquiry</h2>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="fname" required="required" id="id_fname">
+                    <span class="text">First Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="lname" required="required" id="id_lname">
+                    <span class="text">Last Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="email" name="email" required="required" id="id_email">
+                    <span class="text">Email</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="number" name="m_number" required="required" id="id_m_number">
+                    <span class="text">Mobile</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="city" required="required" id="id_city">
+                    <span class="text">City</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="inputBox dropdown designation">
+                    <select class="form-control" id="id_designation" name="designation">
+                      <option value="student">Student</option>
+                      <option value="working">Working</option>
+                    </select>
+                    <span class="text">Designation</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox textarea">
+                    <textarea required="required" name="form_content" id="id_form_content"></textarea>
+                    <span class="text">Type Your Message Here..</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="col">
+                  <button type="submit" class="" title="">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="courses-info-discount col-lg-3 col-md-3 col-sm-12">
+            <div class="container course-info-box">
+              <div class="course-broucher">
+                <h2 class="heading">Course Broucher</h2>
+                <a href="#">Python Broucher</a>
+              </div>
+              <div class="offer-list">
+                <h2 class="heading">Offers On Courses</h2>
+                <ul class="list">
+                  {% for offer in offers %}
+                    <li class="animated fadeIn infinite"><a class="{% if offer.on_offer == 'True' %}offer{% endif %}" href="#">{{offer.name}} {{offer.discount}}% Off</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

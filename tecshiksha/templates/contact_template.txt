@@ -1,0 +1,13 @@
+First name: {{ fname }}
+
+Last name: {{ lname }}
+
+Email: {{ email }}
+
+City: {{ city }}
+
+Designation: {{ designation }}
+
+Mobile Number: {{ m_number }}
+
+Content: {{ form_content }}

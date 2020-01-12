@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+			<div class="heading pt-4">
+				<h2>Blogs</h2>
+			</div>
+			<div class="row blog pt-1 pb-3">
+				<div class="col-lg-9 col-md-9 col-sm-12">
+					<div class="container blog-content">
+
+            {% for blog in blogs %}
+
+            <div class="main-blog" id="{{ blog.id }}">
+							<div class="blog-img">
+                <img src="{{blog.img.url}}" class="img-fluid img" alt="blog_img">
+							</div>
+							<div class="blog-heading">
+								<h4>{{blog.heading}}</h4>
+							</div>
+							<div class="blog-content">
+								<p>{{blog.content}}</p>
+								<a href="#" title="">Read More..</a>
+							</div>
+						</div>
+
+            {% endfor %}
+
+
+            <!-- <div class="main-blog" id="blog01">
+              <div class="blog-img">
+								<img src="{% static 'Images/ai_img1.webp' %}" class="img-fluid img">
+							</div>
+							<div class="blog-heading">
+								<h4>Artificial Intelligence In Real World</h4>
+							</div>
+							<div class="blog-content">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+								<a href="#" title="">Read More..</a>
+							</div>
+						</div>
+
+            <div class="main-blog" id="blog02">
+							<div class="blog-img">
+								<img src="{% static 'Images/ai_img2.webp' %}" class="img-fluid img">
+							</div>
+							<div class="blog-heading">
+								<h4>Machine Learning</h4>
+							</div>
+							<div class="blog-content">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+								<a href="#" title="">Read More..</a>
+							</div>
+						</div>
+
+            <div class="main-blog" id="blog03">
+							<div class="blog-img">
+								<img src="{% static 'Images/ai_img3.webp' %}" class="img-fluid img">
+							</div>
+							<div class="blog-heading">
+								<h4>Cloud Computing</h4>
+							</div>
+							<div class="blog-content">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+								<a href="#" title="">Read More..</a>
+							</div>
+						</div> -->
+
+          </div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12">
+					<div class="container blog-list">
+						<h2 class="heading">Blog Heading</h2>
+						<ul class="list">
+              {% for blog in blogs %}
+                <li><a href="#{{ blog.id }}">{{blog.heading}}</a></li>
+              {% endfor %}
+              <!-- <li><a href="#blog01">Artificial Intelligence</a></li>
+							<li><a href="#blog02">Machine Learning</a></li>
+							<li><a href="#blog03">Cloud Computing</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+      {% endblock %}

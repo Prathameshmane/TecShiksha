@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+<link rel="stylesheet" href="{% static 'css/internship.css' %}">
+    <div class="container pt-3">
+      <div class="row">
+        <div class="workshop-info-content pt-4 col-lg-9 col-md-9 col-sm-12">
+          <div class="internship-info">
+            <div class="internship-info-heading pb-3">
+              <h2>Intership</h2>
+            </div>
+            <div class="about-workshop-info">
+              <p class="about-workshop">We Provide <b>Internships</b> and <b>Jobs</b> to the candidate who deserves it, irrespective of their educational qualification.</p>
+              <p class="about-workshop">We believe in the potential of the candidate which is replicated in the interview. The candidate should posses some exceptional skillset giving a certificate for his/her interest towards the domain.</p>
+              <p class="about-workshop">To Schedule an Interview Please fill Form.</p>
+            </div>
+          </div>
+          <form role="form" action method="POST" class="msg-form mt-4 mb-3">
+            {% csrf_token %}
+            <div class="form-heading">
+              <h2>Internship Form</h2>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox">
+                  <input type="text" name="name" required="required" id="id_name">
+                  <span for="id_name" class="text">Name</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputBox">
+                  <input type="email" name="email" required="required" id="id_email">
+                  <span for="id_email" class="text">Email</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox cv">
+                  <input type="file" name="cv" required="required" id="id_cv">
+                  <span for="id_cv" class="text">Upload Your CV Here</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputBox">
+                  <input type="number" name="m_number" required="required" id="id_m_number">
+                  <span class="text" for="id_m_number">Mobile</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox">
+                  <input type="text" name="city" required="required" id="id_city">
+                  <span for="id_city" class="text">City</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputBox">
+                  <input type="text" name="state" required="required" id="id_state">
+                  <span for="id_state" class="text">State</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox textarea">
+                  <textarea required="required" name="form_content" id="id_form_content"></textarea>
+                  <span for="id_form_content" class="text">Type Your Message Here..</span>
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <button type="submit" class="" title="">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
